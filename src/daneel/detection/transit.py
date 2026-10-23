@@ -13,8 +13,11 @@ p.u = [0.086066667, 0.1542]
 t = np.linspace(-0.075, 0.075, 1000)
 flux = batman.TransitModel(p,t).light_curve(p)
 
-plt.plot(t,flux)
-plt.xlabel('prova')
-# plt.show()
-
+plt.plot(t,flux, color= 'r')
+plt.xlabel('Time from central transit [days]', fontsize=12, color='black')
+plt.ylabel('Normalized Flux', fontsize=12, color='black')
+plt.ylim(0.982, 1.002) 
+plt.grid(True, color='lightgray', linestyle='--', linewidth=0.5, alpha=0.5)
+plt.title('WASP-121b light curve')
+#plt.show()
 plt.savefig("WASP-121b_assignment1_taskF.png")
